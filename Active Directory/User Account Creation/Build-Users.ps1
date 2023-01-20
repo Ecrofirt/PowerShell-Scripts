@@ -93,13 +93,13 @@ This function is used as a place to set up the script-wide variables. It only ge
     $Script:ADUsers = Get-ADUser -Filter "EmployeeID -like '*'" -Properties SamAccountName,UserPrincipalName,EmployeeID,Mail,MailNickname,ProxyAddresses
 
     #This is the Server running Azure AD Connect
-    $Script:AADConnectServer = "KC-ADCONN-01.example.com"
+    $Script:AADConnectServer = "ADCONN-01.example.com"
 
     #set up the CSV header
     $Script:CSVHeader = "EmployeeID","SAMAccountName","UserPrincipalName","GivenName","MiddleName","SurName","Indicator"
 
     #The DN of the OU where staff accounts will be placed
-    $Script:StaffOU = "OU=Staff,OU=General_Accounts,OU=User_New,DC=example,DC=com"
+    $Script:StaffOU = "OU=Staff,DC=example,DC=com"
 
     #AD Groups that staff accounts will be added to
     $Script:StaffGroups = @(
@@ -109,7 +109,7 @@ This function is used as a place to set up the script-wide variables. It only ge
     )
 
     #The DN of the OU where student accounts will be placed
-    $Script:StudentOU = "OU=Incoming,OU=Class_Groups,OU=Students,OU=General_Accounts,OU=User_New,DC=example,DC=com"
+    $Script:StudentOU = "OU=Students,DC=example,DC=com"
 
     #AD Groups that student accounts will be added to
     $Script:StudentGroups = @(
